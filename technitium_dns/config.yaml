@@ -1,0 +1,31 @@
+name: "Technitium DNS"
+description: "DNS server"
+version: "13.6.0"
+slug: "technitium_dns"
+init: false
+arch:
+ - amd64
+ - armv7
+ - armhf
+ - i386 
+map:
+ - type: addon_config
+   read_only: false
+   path: /etc/dns
+ports:
+  53/udp: 53
+  53/tcp: 53
+  67/udp: 67
+  853/udp: 853
+  853/tcp: 853
+  5380/tcp: 5380
+  53443/tcp: 53443
+ports_description:
+  53/udp: "DNS"
+  53/tcp: "DNS"
+  67/udp: "DHCP"
+  853/udp: "DNS over TLS"
+  853/tcp: "DNS over TLS"
+  5380/tcp: "Web UI HTTP"
+  53443/tcp: "Web UI HTTPS"
+image: "technitium/dns-server"
